@@ -26,28 +26,19 @@ Athena enables SQL-based querying of the stored stock market data. Users can ana
 
 ## Technologies Used
 
-**1. Apache Kafka (Running on AWS EC2)**
-**2. Python (Data producer and consumer)**
-**3. Boto3 SDK (AWS SDK for Python)**
-**4. AWS S3 (Data storage)**
-**5. AWS Glue (Data cataloging and ETL)**
-**6. AWS Athena (SQL querying)**
+1. **Apache Kafka (Running on AWS EC2)**
+2. **Python (Data producer and consumer)**
+3. **Boto3 SDK (AWS SDK for Python)**
+4. **AWS S3 (Data storage)**
+5. **AWS Glue (Data cataloging and ETL)**
+6. **AWS Athena (SQL querying)**
 
 ## Setup & Installation
 1. Setup Kafka on AWS EC2
 Launch an EC2 instance and install Kafka. Configure Kafka topics for stock market data streaming.
+
 2. Run the Producer and consumer in Jupyter Notebook
-bash
-Copy
-Edit
-python producer.py
-Reads stock data from a CSV file and publishes it to Kafka.
-bash
-Copy
-Edit
-python consumer.py
-Reads messages from Kafka and stores them in AWS S3.
-4. Configure AWS Glue & Athena
-Create an AWS Glue Crawler to catalog data in S3.
-Use Amazon Athena to run SQL queries on the data.
+   
+3. Configure AWS Glue & Athena
+Create an AWS Glue Crawler to catalog data in S3. Use Amazon Athena to run SQL queries on the data.
 
