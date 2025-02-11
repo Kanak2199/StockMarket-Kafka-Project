@@ -37,7 +37,7 @@ Athena enables SQL-based querying of the stored stock market data. Users can ana
 1. Setup Kafka on AWS EC2
 Launch an EC2 instance and install Kafka. Configure Kafka topics for stock market data streaming.
 
-2. Run the Producer and consumer in Jupyter Notebook
+2. Run the Producer and consumer in Jupyter Notebook.
    
 3. Configure AWS Glue & Athena
 Create an AWS Glue Crawler to catalog data in S3. Use Amazon Athena to run SQL queries on the data.
