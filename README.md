@@ -1,42 +1,53 @@
-## Stock Market Data Pipeline using Kafka and AWS
+# Stock Market Data Pipeline using Kafka and AWS
 
-# Overview
+## Overview
 This project demonstrates a real-time stock market data processing pipeline using Apache Kafka, AWS Services like AWS EC2, S3, AWS Glue Crawler, AWS Glue Data Catalog and AWS Athena and Python. The architecture enables ingestion, storage, and querying of stock market data efficiently.
 
-# Architecture
+## Architecture
 The system is structured as follows:
 
-Dataset (CSV Format):
+1. Dataset:
+The pipeline starts with a stock market dataset stored in CSV format. The dataset is used to simulate stock price fluctuations.
 
-The pipeline starts with a stock market dataset stored in CSV format.
-The dataset is used to simulate stock price fluctuations.
-Producer - Stock Market App Simulation (Python & Boto3):
+3. Producer - Stock Market App Simulation (Python & Boto3):
+A Python-based stock market simulator reads data from the CSV file. Uses Boto3 SDK to interact with AWS. Sends stock market data as real-time messages to Kafka.
 
-A Python-based stock market simulator reads data from the CSV file.
-Uses Boto3 SDK to interact with AWS.
-Sends stock market data as real-time messages to Kafka.
-Apache Kafka (Running on Amazon EC2):
+3. Apache Kafka (Running on Amazon EC2):
+Kafka acts as a distributed message broker. It enables real-time streaming of stock market data. The producer sends stock price updates to a Kafka topic.
 
-Kafka acts as a distributed message broker.
-It enables real-time streaming of stock market data.
-The producer sends stock price updates to a Kafka topic.
-Consumer - Processing and Storage:
+5. Consumer - Processing and Storage:
+A Kafka consumer retrieves stock market data messages. The consumer processes and stores data into Amazon S3.
 
-A Kafka consumer retrieves stock market data messages.
-The consumer processes and stores data into Amazon S3.
-AWS Glue (Crawler & Data Catalog):
+5. AWS Glue (Crawler & Data Catalog):
+AWS Glue Crawler scans the stock data stored in Amazon S3. It updates the AWS Glue Data Catalog, making the data queryable.
 
-AWS Glue Crawler scans the stock data stored in Amazon S3.
-It updates the AWS Glue Data Catalog, making the data queryable.
-Amazon Athena:
+7. Amazon Athena:
+Athena enables SQL-based querying of the stored stock market data. Users can analyze stock trends and perform insights on real-time and historical data.
 
-Athena enables SQL-based querying of the stored stock market data.
-Users can analyze stock trends and perform insights on real-time and historical data.
-Technologies Used
-Apache Kafka (Running on AWS EC2)
-Python (Data producer and consumer)
-Boto3 SDK (AWS SDK for Python)
-AWS S3 (Data storage)
-AWS Glue (Data cataloging and ETL)
-AWS Athena (SQL querying)
+## Technologies Used
+
+**1. Apache Kafka (Running on AWS EC2)**
+**2. Python (Data producer and consumer)**
+**3. Boto3 SDK (AWS SDK for Python)**
+**4. AWS S3 (Data storage)**
+**5. AWS Glue (Data cataloging and ETL)**
+**6. AWS Athena (SQL querying)**
+
+## Setup & Installation
+1. Setup Kafka on AWS EC2
+Launch an EC2 instance and install Kafka. Configure Kafka topics for stock market data streaming.
+2. Run the Producer and consumer in Jupyter Notebook
+bash
+Copy
+Edit
+python producer.py
+Reads stock data from a CSV file and publishes it to Kafka.
+bash
+Copy
+Edit
+python consumer.py
+Reads messages from Kafka and stores them in AWS S3.
+4. Configure AWS Glue & Athena
+Create an AWS Glue Crawler to catalog data in S3.
+Use Amazon Athena to run SQL queries on the data.
 
