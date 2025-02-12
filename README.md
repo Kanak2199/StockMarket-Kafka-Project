@@ -1,4 +1,4 @@
-# Stock Market Data Pipeline using Kafka and AWS
+# Stock Market Real Time Data Pipeline using Kafka and AWS
 
 ## Overview
 This project demonstrates a real-time stock market data processing pipeline using Apache Kafka, AWS Services like AWS EC2, S3, AWS Glue Crawler, AWS Glue Data Catalog and AWS Athena and Python. The architecture enables ingestion, storage, and querying of stock market data efficiently.
