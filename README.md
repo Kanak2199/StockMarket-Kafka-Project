@@ -12,6 +12,8 @@ The pipeline starts with a stock market dataset stored in CSV format. The datase
 3. Producer - Stock Market App Simulation (Python & Boto3):
 A Python-based stock market simulator reads data from the CSV file. Uses Boto3 SDK to interact with AWS. Sends stock market data as real-time messages to Kafka.
 
+![Zookeper and Server](images/Kafka zookeeper server.png)
+
 3. Apache Kafka (Running on Amazon EC2):
 Kafka acts as a distributed message broker. It enables real-time streaming of stock market data. The producer sends stock price updates to a Kafka topic.
 
