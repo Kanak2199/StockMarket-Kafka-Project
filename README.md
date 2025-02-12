@@ -9,21 +9,19 @@ The system is structured as follows:
 1. Dataset:
 The pipeline starts with a stock market dataset stored in CSV format. The dataset is used to simulate stock price fluctuations.
 
-3. Producer - Stock Market App Simulation (Python & Boto3):
+2. Producer - Stock Market App Simulation (Python & Boto3):
 A Python-based stock market simulator reads data from the CSV file. Uses Boto3 SDK to interact with AWS. Sends stock market data as real-time messages to Kafka.
-
-![Zookeper and Server](Images/Kafka zookeeper server.png)
 
 3. Apache Kafka (Running on Amazon EC2):
 Kafka acts as a distributed message broker. It enables real-time streaming of stock market data. The producer sends stock price updates to a Kafka topic.
 
-5. Consumer - Processing and Storage:
+4. Consumer - Processing and Storage:
 A Kafka consumer retrieves stock market data messages. The consumer processes and stores data into Amazon S3.
 
 5. AWS Glue (Crawler & Data Catalog):
 AWS Glue Crawler scans the stock data stored in Amazon S3. It updates the AWS Glue Data Catalog, making the data queryable.
 
-7. Amazon Athena:
+6. Amazon Athena:
 Athena enables SQL-based querying of the stored stock market data. Users can analyze stock trends and perform insights on real-time and historical data.
 
 ## Technologies Used
